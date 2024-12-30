@@ -72,5 +72,11 @@ GROUP BY activity_date;
 -------------------------------------------------------------------------------------------------------------
 #DynamicPivotingofaTable_Solution_Q4
 
-# once done in class, will complete
+SELECT product_id,
+  SUM(IF(store = 'LC_Store', price, NULL)) AS LC_Store,
+  SUM(IF(store = 'Nozama', price, NULL)) AS Nozama,
+  SUM(IF(store = 'Shop', price, NULL)) AS Shop,
+  SUM(IF(store = 'Souq', price, NULL)) AS Souq
+FROM Products p
+GROUP BY 1;
 
